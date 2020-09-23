@@ -1,0 +1,1 @@
+文件1:test\orig.txt 与 文件二:test\orig_0.8_add.txt 相似,相似度:0.97
