@@ -1,0 +1,29 @@
+{
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "release": "standard-version"
+  },
+  "name": "SoftwareEngineering",
+  "version": "1.0.0",
+  "description": "| 项目                 | 内容                                                         |\r | -------------------- | ------------------------------------------------------------ |\r | 这个作业属于哪个课程 | [软件工程](https://edu.cnblogs.com/campus/gdgy/informationsecurity1812) |\r | 这个作业要求在哪里   | [作业要求](https://edu.cnblogs.com/campus/gdgy/informationsecurity1812/homework/11156) |\r | 这个作业的目标       | 自我介绍+理解课程+提出问题                                   |",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ligo04/Ligo04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ligo04/Ligo04/issues"
+  },
+  "homepage": "https://github.com/Ligo04/Ligo04#readme"
+
+}

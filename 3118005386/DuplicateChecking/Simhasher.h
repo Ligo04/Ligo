@@ -32,20 +32,21 @@ public:
 
 public:
 	// 分析,加载文本内容 [原文文件] [抄袭版论文的文件] [答案文件]
-	void Parse(int argc,char** argv);
+	bool Parse(int argc,char** argv);
 
 	// 判断是否相似两个文本是否相似(默认海明距离阈值为3)
-	void isSimilarity(unsigned int n = 3);
+	void isSimilarity(uint32_t topk ,unsigned int n = 3);
 
 private:
-	//分词得到hash值与权值
-	std::vector<std::pair<size_t, double>> Participle(std::string context);
+
+
+	//分词得到hash值与权值(默认取权重的前100个)
+	std::vector<std::pair<uint64_t, int>> Participle(std::string context, uint32_t topk = 100);
 	//计算文章的simhash值
-	uint64_t CalculaterSimhash(std::vector<std::pair<uint64_t, double>> fw);
+	uint64_t CalculaterSimhash(std::vector<std::pair<uint64_t, int>> fw);
 	//海明距离阈值为3
 	std::pair<bool, double> CalcularSimilarity(uint64_t lhs, uint64_t rhs, unsigned short n);
-private:
-	const uint32_t																topk = 5;											
+private:									
 	cppjieba::Jieba																mJieba;					//结巴类
 	std::vector<std::pair<std::string,std::string>>								mFiles;					//文件中名字与内容
 

@@ -45,6 +45,15 @@ std::string UtfToGbk(const char* utf8)
 	return str;
 }
 
+bool IsErase(int i)
+{
+	if (isspace(i))
+	{
+		return true;
+	}
+	return false;
+}
+
 uint64_t binaryStringToUint64(const std::string& bin)
 {
 	uint64_t res = 0;
@@ -69,7 +78,7 @@ Simhasher::~Simhasher()
 	mLog.close();
 };
 
-void Simhasher::Parse(int nums, char** argv)
+bool Simhasher::Parse(int nums, char** argv)
 {
 	mFiles.resize(nums-1);
 	std::ifstream is;
@@ -81,24 +90,35 @@ void Simhasher::Parse(int nums, char** argv)
 		if (!is.is_open())
 		{
 			std::cout << "打开" << argv[i + 1] << "失败\n";
-			return;
+			return false;
 		}
 		oss << is.rdbuf();
 		mFiles[i].first = std::string(argv[i + 1]);
-		mFiles[i].second = string_To_UTF8(oss.str());
+		mFiles[i].second = oss.str();
+		//清除空格
+		mFiles[i].second.erase(std::remove_if(mFiles[i].second.begin(), mFiles[i].second.end(), IsErase), mFiles[i].second.end());
+		//std::cout << UtfToGbk(mFiles[i].second.c_str()) << std::endl;
+		oss.clear();
+		is.close();
 	}
-	is.close();
+	//is.close();
 
 	mLog.open(argv[nums], std::ios::out | std::ios::app);
+	if (!mLog.is_open())
+	{
+		std::cout << "打开" << argv[nums] << "失败\n";
+		return false;
+	}
+	return true;
 }
 
-void Simhasher::isSimilarity(unsigned int n)
+void Simhasher::isSimilarity(uint32_t topk,unsigned int n)
 {
 	std::vector<uint64_t> nums;
 	for (auto& p : mFiles)
 	{
-		std::vector<std::pair<size_t, double>> fw;
-		fw = Participle(p.second);
+		std::vector<std::pair<uint64_t, int>> fw;
+		fw = Participle(p.second, topk);
 		nums.push_back(CalculaterSimhash(fw));
 	}
 
@@ -121,7 +141,8 @@ void Simhasher::isSimilarity(unsigned int n)
 			{
 				std::string str = "文件1:" + mFiles[i].first + " 与 文件二:" + mFiles[j].first + " 不相似,相似度:";
 				char logStr[100]{};
-				sprintf_s(logStr, "%.2f", flag.second);
+				sprintf_s(logStr, "%0.2f", flag.second);
+				str += logStr;
 				std::cout << str << std::endl;
 				mLog << str << std::endl;
 			}
@@ -129,33 +150,34 @@ void Simhasher::isSimilarity(unsigned int n)
 	}
 }
 
-//TODO:可待优化?
-std::vector<std::pair<size_t, double>> Simhasher::Participle(std::string context)
+std::vector<std::pair<uint64_t, int>> Simhasher::Participle(std::string context, uint32_t topk)
 {
-	// 提取关键词
+	//提取关键词
 	std::vector<cppjieba::KeywordExtractor::Word> words;
 	mJieba.extractor.Extract(context, words, topk);
+	
 
-	//(哈希值,权重)
-	std::vector<std::pair<size_t, double>> fweight;
-
+	std::vector<std::pair<uint64_t, int>> fweight;
 	std::hash<std::string> hash;
 
-	for (auto& p : words)
-	{
-		fweight.push_back(std::pair<size_t, double>(hash(p.word),p.weight));
-	}
-
+	//计算哈希值与权重(词频)
+	for (auto& w : words)
+{
+		std::pair<uint64_t, int> pairs;
+		pairs.first = hash(w.word);
+		pairs.second = static_cast<int>(w.weight);
+		fweight.push_back(pairs);
+}
 	return fweight;
 }
 
-uint64_t Simhasher::CalculaterSimhash(std::vector<std::pair<uint64_t, double>> fw)
+uint64_t Simhasher::CalculaterSimhash(std::vector<std::pair<uint64_t, int>> fw)
 {
-	std::vector<std::vector<double>> numMatrix;
+	std::vector<std::vector<int>> numMatrix;
 	//加权
 	for (auto& p : fw)
 	{
-		std::vector<double> addWeight(64);
+		std::vector<int> addWeight(64);
 		for (size_t i = 0; i < 64; ++i)
 		{
 			if ((p.first >> i) & 1)
@@ -169,7 +191,8 @@ uint64_t Simhasher::CalculaterSimhash(std::vector<std::pair<uint64_t, double>> f
 		}
 		numMatrix.push_back(addWeight);
 	}
-	//合并,把最终的数据放在NumMatrix的第一行中
+	std::string str;
+	//合并,降维
 	for (size_t i = 0; i < 64; ++i)
 	{
 		double total = 0;
@@ -177,56 +200,20 @@ uint64_t Simhasher::CalculaterSimhash(std::vector<std::pair<uint64_t, double>> f
 		{
 			total += p[i];
 		}
-		numMatrix[0][i] = total;
 
-		total = 0;
+		total >= 0 ? str += "1" : str += "0";
 	}
-
-
-	//降维,变成01串
-	std::string str;
-	for (size_t i = 0; i < 64; ++i)
-	{
-		if (numMatrix.front()[i] >= 0)
-		{
-			str += "1";
-		}
-		else
-		{
-			str += "0";
-		}
-	}
-	//反转
-	std::reverse(str.begin(), str.end());
 	
 	//输出结果
 	return binaryStringToUint64(str);
 }
 
-std::pair<bool,double> Simhasher::CalcularSimilarity(uint64_t lhs, uint64_t rhs, unsigned short n)
+std::pair<bool, double> Simhasher::CalcularSimilarity(uint64_t lhs, uint64_t rhs, unsigned short n)
 {
 	std::pair<bool, double> flag;
-	unsigned short cnt = 0;
-	lhs ^= rhs;
-	while (lhs)
-	{
-		lhs &= lhs - 1;
-		cnt++;
-	}
-
-
-	if (cnt<=n)
-	{
-		flag.first = true;
-	}
-	else
-	{
-		flag.second = false;
-	}
-
-
+	unsigned short cnt = std::bitset<64>(lhs ^ rhs).count();
+	cnt <= n ? flag.first = true : flag.first=false;
 	//计算相似度
-	double similarity = 1 / sqrt(2 * PI * 0.16) * exp(-std::pow((0.01 * cnt - 0.01), 2) / (2 * std::pow(0.0459, 2)));
-	flag.second = similarity;
+	flag.second = (1.0 / sqrt(2 * PI * 0.16)) * exp(-std::pow((0.01 * cnt - 0.01), 2) / (2 * std::pow(0.0459, 2)));
 	return flag;
 }
