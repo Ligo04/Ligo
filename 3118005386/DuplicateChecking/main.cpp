@@ -14,34 +14,26 @@ int test()
 
 int main(int argc, char** argv)
 {
-	try
+	if (argc < 4)
 	{
-		if (argc < 4)
-		{
-			std::cout << "输入参数过少\n";
-			return 0;
-		}
-
-		std::clock_t c_start = std::clock();												//开始计时
-
-		std::vector<std::string> names;
-		for (int i = 1; i < argc; ++i)
-		{
-			names.push_back(argv[i]);
-		}
-
-		Simhasher sim(DICT_PATH, HMM_PATH, USER_DICT_PATH, IDF_PATH, STOP_WORD_PATH);
-		if (sim.Parse(names))
-		{
-			sim.isSimilarity(50);
-		}
-		std::clock_t c_end = std::clock();
-		std::cout << "总耗时:" << static_cast<double>(c_end - c_start) / 1000 << "s" << std::endl;
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << std::endl; 
+		std::cout << "输入参数过少\n";
+		return 0;
 	}
 
+	std::clock_t c_start = std::clock();												//开始计时
+
+	std::vector<std::string> names;
+	for (int i = 1; i < argc; ++i)
+	{
+		names.push_back(argv[i]);
+	}
+
+	Simhasher sim(DICT_PATH, HMM_PATH, USER_DICT_PATH, IDF_PATH, STOP_WORD_PATH);
+	if (sim.Parse(names))
+	{
+		sim.isSimilarity(50);
+	}
+	std::clock_t c_end = std::clock();
+	std::cout << "总耗时:" << static_cast<double>(c_end - c_start) / 1000 << "s" << std::endl;
 	return 0;
 }

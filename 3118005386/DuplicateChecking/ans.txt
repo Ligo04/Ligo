@@ -42,3 +42,5 @@
 文件1:test\orig.txt 与 文件二:test\orig_0.8_dis_10.txt 不相似,相似度:0.55
 文件1:test\orig.txt 与 文件二:test\orig_0.8_dis_10.txt 不相似,相似度:0.55
 文件1:test\orig.txt 与 文件二:test\orig_0.8_dis_10.txt 不相似,相似度:0.22
+文件1:test\orig.txt 与 文件二:test\orig_0.8_dis_10.txt 不相似,相似度:0.22
+文件1:test\orig.txt 与 文件二:test\orig_0.8_add.txt 不相似,相似度:0.81
