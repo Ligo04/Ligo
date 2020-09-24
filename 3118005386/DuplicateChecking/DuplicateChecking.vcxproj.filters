@@ -13,6 +13,122 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="cppjieba">
+      <UniqueIdentifier>{51815780-1623-48e1-a050-add047d58d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="limonp">
+      <UniqueIdentifier>{9812716b-3fa7-4ded-b58f-9abf9fe43f96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Simhasher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\DictTrie.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\FullSegment.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\HMMModel.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\HMMSegment.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\Jieba.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\KeywordExtractor.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\MixSegment.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\MPSegment.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\PosTagger.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\PreFilter.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\QuerySegment.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\SegmentBase.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\SegmentTagged.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\TextRankExtractor.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\Trie.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="cppjieba\Unicode.hpp">
+      <Filter>cppjieba</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\ArgvContext.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\BlockingQueue.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\BoundedBlockingQueue.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\BoundedQueue.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Closure.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Colors.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Condition.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Config.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\FileLock.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\ForcePublic.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\LocalVector.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Logging.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Md5.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\MutexLock.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\NonCopyable.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\StdExtension.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\StringUtil.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\Thread.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
+    <ClInclude Include="limonp\ThreadPool.hpp">
+      <Filter>limonp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,10 +137,5 @@
     <ClCompile Include="Simhasher.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Simhasher.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

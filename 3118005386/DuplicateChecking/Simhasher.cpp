@@ -76,24 +76,24 @@ Simhasher::Simhasher(const char* _DICT_PATH, const char* _HMM_PATH, const char* 
 Simhasher::~Simhasher()
 {
 	mLog.close();
-};
+}
 
-bool Simhasher::Parse(int nums, char** argv)
+bool Simhasher::Parse(std::vector<std::string> fileNames)
 {
-	mFiles.resize(nums - 1);
+	mFiles.resize(fileNames.size() - 1);
 	std::ifstream is;
 	std::stringstream oss;
 	//读取文件的数据
-	for (int i = 0; i < nums - 1; ++i)
+	for (int i = 0; i < fileNames.size() - 1; ++i)
 	{
-		is.open(argv[i + 1], std::ios::in);
+		is.open(fileNames[i], std::ios::in);
 		if (!is.is_open())
 		{
-			std::cout << "打开" << argv[i + 1] << "失败\n";
+			std::cout << "打开" << fileNames[i] << "失败\n";
 			return false;
 		}
 		oss << is.rdbuf();
-		mFiles[i].first = std::string(argv[i + 1]);
+		mFiles[i].first = fileNames[i];
 		mFiles[i].second = oss.str();
 		//清除空格
 		mFiles[i].second.erase(std::remove_if(mFiles[i].second.begin(), mFiles[i].second.end(), IsErase), mFiles[i].second.end());
@@ -101,14 +101,8 @@ bool Simhasher::Parse(int nums, char** argv)
 		oss.clear();
 		is.close();
 	}
-	//is.close();
 
-	mLog.open(argv[nums], std::ios::out | std::ios::app);
-	if (!mLog.is_open())
-	{
-		std::cout << "打开" << argv[nums] << "失败\n";
-		return false;
-	}
+	mLog.open(fileNames[fileNames.size() - 1], std::ios::out | std::ios::app);
 	return true;
 }
 

@@ -42,15 +42,18 @@ class Logger {
     assert(level_ <= sizeof(LOG_LEVEL_ARRAY)/sizeof(*LOG_LEVEL_ARRAY));
     char buf[32];
     time_t now;
-    tm* timeinfo = nullptr;
+    struct tm* timeinfo = nullptr;
     time(&now);
     localtime_s(timeinfo, &now);
-    strftime(buf, sizeof(buf), LOG_TIME_FORMAT, timeinfo);
-    stream_ << buf 
-      << " " << filename 
-      << ":" << lineno 
-      << " " << LOG_LEVEL_ARRAY[level_] 
-      << " ";
+    if (timeinfo != nullptr)
+    {
+        strftime(buf, sizeof(buf), LOG_TIME_FORMAT, timeinfo);
+        stream_ << buf
+            << " " << filename
+            << ":" << lineno
+            << " " << LOG_LEVEL_ARRAY[level_]
+            << " ";
+    }
   }
   ~Logger() {
 #ifdef LOGGING_LEVEL
