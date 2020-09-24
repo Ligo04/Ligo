@@ -69,7 +69,7 @@ uint64_t binaryStringToUint64(const std::string& bin)
 }
 
 Simhasher::Simhasher(const char* _DICT_PATH, const char* _HMM_PATH, const char* _USER_DICT_PATH, const char* _IDF_PATH, const char* _STOP_WORD_PATH)
-	:mJieba(_DICT_PATH,_HMM_PATH, _USER_DICT_PATH, _IDF_PATH, _STOP_WORD_PATH),mFiles{}
+	:mJieba(_DICT_PATH, _HMM_PATH, _USER_DICT_PATH, _IDF_PATH, _STOP_WORD_PATH), mFiles{}
 {
 }
 
@@ -80,11 +80,11 @@ Simhasher::~Simhasher()
 
 bool Simhasher::Parse(int nums, char** argv)
 {
-	mFiles.resize(nums-1);
+	mFiles.resize(nums - 1);
 	std::ifstream is;
 	std::stringstream oss;
 	//读取文件的数据
-	for (int i = 0; i < nums-1; ++i)
+	for (int i = 0; i < nums - 1; ++i)
 	{
 		is.open(argv[i + 1], std::ios::in);
 		if (!is.is_open())
@@ -112,7 +112,7 @@ bool Simhasher::Parse(int nums, char** argv)
 	return true;
 }
 
-void Simhasher::isSimilarity(uint32_t topk,unsigned int n)
+void Simhasher::isSimilarity(uint32_t topk, unsigned int n)
 {
 	std::vector<uint64_t> nums;
 	for (auto& p : mFiles)
@@ -123,7 +123,7 @@ void Simhasher::isSimilarity(uint32_t topk,unsigned int n)
 	}
 
 	//两两比较(当然现在只有两个文件)
-	for (size_t i = 0; i < nums.size()-1; ++i)
+	for (size_t i = 0; i < nums.size() - 1; ++i)
 	{
 		for (size_t j = i + 1; j < nums.size(); ++j)
 		{
@@ -155,19 +155,19 @@ std::vector<std::pair<uint64_t, int>> Simhasher::Participle(std::string context,
 	//提取关键词
 	std::vector<cppjieba::KeywordExtractor::Word> words;
 	mJieba.extractor.Extract(context, words, topk);
-	
+
 
 	std::vector<std::pair<uint64_t, int>> fweight;
 	std::hash<std::string> hash;
 
 	//计算哈希值与权重(词频)
 	for (auto& w : words)
-{
+	{
 		std::pair<uint64_t, int> pairs;
 		pairs.first = hash(w.word);
 		pairs.second = static_cast<int>(w.weight);
 		fweight.push_back(pairs);
-}
+	}
 	return fweight;
 }
 
@@ -203,7 +203,7 @@ uint64_t Simhasher::CalculaterSimhash(std::vector<std::pair<uint64_t, int>> fw)
 
 		total >= 0 ? str += "1" : str += "0";
 	}
-	
+
 	//输出结果
 	return binaryStringToUint64(str);
 }
@@ -212,7 +212,7 @@ std::pair<bool, double> Simhasher::CalcularSimilarity(uint64_t lhs, uint64_t rhs
 {
 	std::pair<bool, double> flag;
 	unsigned short cnt = std::bitset<64>(lhs ^ rhs).count();
-	cnt <= n ? flag.first = true : flag.first=false;
+	cnt <= n ? flag.first = true : flag.first = false;
 	//计算相似度
 	flag.second = (1.0 / sqrt(2 * PI * 0.16)) * exp(-std::pow((0.01 * cnt - 0.01), 2) / (2 * std::pow(0.0459, 2)));
 	return flag;

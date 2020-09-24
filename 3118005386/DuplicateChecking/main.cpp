@@ -1,4 +1,4 @@
-#include"Simhasher.h"
+ï»¿#include"Simhasher.h"
 #include<time.h>
 
 const char* const DICT_PATH = "dict/jieba.dict.utf8";
@@ -7,11 +7,11 @@ const char* const USER_DICT_PATH = "dict/user.dict.utf8";
 const char* const IDF_PATH = "dict/idf.utf8";
 const char* const STOP_WORD_PATH = "dict/stop_words.utf8";
 
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
 	if (argc < 4)
 	{
-		std::cout << "ÊäÈë²ÎÊý¹ýÉÙ\n";
+		std::cout << "è¾“å…¥å‚æ•°è¿‡å°‘\n";
 		return 0;
 	}
 
@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 		sim.isSimilarity(100);
 	}
 	std::clock_t c_end = std::clock();
-	std::cout << "×ÜºÄÊ±:" << static_cast<double>(c_end - c_start)/1000<<"s"<< std::endl;
+	std::cout << "æ€»è€—æ—¶:" << static_cast<double>(c_end - c_start) / 1000 << "s" << std::endl;
 
 	return 0;
 }
