@@ -2,6 +2,7 @@
 #include <iomanip>
 const double PI = std::atan(1.0) * 4;
 #pragma warning(disable:26451)
+#pragma warning(disable:4267)
 // std::string ×ª»»Îª UTF-8 ±àÂë
 std::string string_To_UTF8(const std::string& str)
 {
@@ -93,7 +94,7 @@ void Simhasher::Parse(int nums, char** argv)
 
 void Simhasher::isSimilarity(unsigned int n)
 {
-	std::vector<uint32_t> nums;
+	std::vector<uint64_t> nums;
 	for (auto& p : mFiles)
 	{
 		std::vector<std::pair<size_t, double>> fw;

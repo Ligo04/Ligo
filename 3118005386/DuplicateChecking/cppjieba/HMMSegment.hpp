@@ -7,7 +7,7 @@
 #include <cassert>
 #include "HMMModel.hpp"
 #include "SegmentBase.hpp"
-
+#pragma warning(disable:4267)
 namespace cppjieba {
 class HMMSegment: public SegmentBase {
  public:
