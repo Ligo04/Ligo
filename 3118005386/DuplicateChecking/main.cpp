@@ -7,10 +7,6 @@ const char* const USER_DICT_PATH = "dict/user.dict.utf8";
 const char* const IDF_PATH = "dict/idf.utf8";
 const char* const STOP_WORD_PATH = "dict/stop_words.utf8";
 
-int test()
-{
-
-};
 
 int main(int argc, char** argv)
 {
