@@ -326,23 +326,4 @@
 
     æˆ‘çš„å¥³äººæŠ¹ç€çœ¼æ³ªèµ°åˆ°å¥¹çˆ¹ç±³è¡Œé—¨å£ï¼Œç«™äº†å¾ˆé•¿æ—¶é—´ï¼Œå¥¹çœ‹åˆ°å¥¹çˆ¹çš„è„‘è¢‹è¢«ç…¤æ²¹ç¯çš„äº®å…‰å°åœ¨å¢™ä¸Šï¼Œå¥¹çŸ¥é“ä»–æ˜¯åœ¨æ¸…ç‚¹å¸ç›®ã€‚å¥¹ç«™åœ¨é‚£é‡Œå‘œå‘œå“­äº†ä¸€ä¼šï¼Œå°±èµ°å¼€äº†ã€‚
 
-    å®¶çé‚£å¤©æ™šä¸Šèµ°äº†åå¤šé‡Œå¤œè·¯å›åˆ°äº†æˆ‘å®¶ã€‚å¥¹ä¸€ä¸ªå­¤èº«å¥³äººï¼Œåˆæ€€ç€ä¸ƒä¸ªå¤šæœˆçš„æœ‰åº†ï¼Œä¸€è·¯ä¸Šåˆ°å¤„éƒ½æ˜¯ç‹—å ï¼Œä¸‹è¿‡ä¸€åœºå¤§é›¨çš„è·¯åˆå‘å‘æ´¼æ´¼ã€‚ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
-ÎÄ¼ş1:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt Óë ÎÄ¼ş¶ş:D:\Github\SoftwareEngineering\3118005386\DuplicateChecking\test\orig.txt ÏàËÆ,ÏàËÆ¶È:0.97
+    å®¶çé‚£å¤©æ™šä¸Šèµ°äº†åå¤šé‡Œå¤œè·¯å›åˆ°äº†æˆ‘å®¶ã€‚å¥¹ä¸€ä¸ªå­¤èº«å¥³äººï¼Œåˆæ€€ç€ä¸ƒä¸ªå¤šæœˆçš„æœ‰åº†ï¼Œä¸€è·¯ä¸Šåˆ°å¤„éƒ½æ˜¯ç‹—å ï¼Œä¸‹è¿‡ä¸€åœºå¤§é›¨çš„è·¯åˆå‘å‘æ´¼æ´¼ã€‚

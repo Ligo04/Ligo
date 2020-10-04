@@ -37,8 +37,8 @@ namespace CheckTest
 			std::string str2 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\test\\orig_0.8_add.txt";
 			std::string str3 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\ans.txt";
 			names.push_back(str1);
-			names.push_back(str1);
-			names.push_back(str1);
+			names.push_back(str2);
+			names.push_back(str3);
 			Assert::IsTrue(sim.Parse(names));
 			sim.isSimilarity(50);
 		}
@@ -52,8 +52,8 @@ namespace CheckTest
 			std::string str2 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\test\\orig_0.8_dis_15.txt";
 			std::string str3 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\ans.txt";
 			names.push_back(str1);
-			names.push_back(str1);
-			names.push_back(str1);
+			names.push_back(str2);
+			names.push_back(str3);
 			Assert::IsTrue(sim.Parse(names));
 			sim.isSimilarity(50);
 		}
@@ -66,8 +66,8 @@ namespace CheckTest
 			std::string str2 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\test\\orig_0.8_dis_1.txt";
 			std::string str3 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\ans.txt";
 			names.push_back(str1);
-			names.push_back(str1);
-			names.push_back(str1);
+			names.push_back(str2);
+			names.push_back(str3);
 			Assert::IsTrue(sim.Parse(names));
 			sim.isSimilarity(50);
 		}
@@ -80,8 +80,8 @@ namespace CheckTest
 			std::string str2 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\test\\orig_0.8_dis_10.txt";
 			std::string str3 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\ans.txt";
 			names.push_back(str1);
-			names.push_back(str1);
-			names.push_back(str1);
+			names.push_back(str2);
+			names.push_back(str3);
 			Assert::IsTrue(sim.Parse(names));
 			sim.isSimilarity(50);
 		}
@@ -94,8 +94,8 @@ namespace CheckTest
 			std::string str2 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\test\\orig_0.8_dis_15.txt";
 			std::string str3 = "D:\\Github\\SoftwareEngineering\\3118005386\\DuplicateChecking\\ans.txt";
 			names.push_back(str1);
-			names.push_back(str1);
-			names.push_back(str1);
+			names.push_back(str2);
+			names.push_back(str3);
 			Assert::IsTrue(sim.Parse(names));
 			sim.isSimilarity(50);
 		}
