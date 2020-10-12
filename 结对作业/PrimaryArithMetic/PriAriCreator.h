@@ -1,5 +1,5 @@
-#ifndef __PRIARICREATOR
-#define __PRIARICREATOR
+#ifndef __PRIARICREATOR_H
+#define __PRIARICREATOR_H
 #include<fstream>
 #include<random>
 #include<time.h>
@@ -19,7 +19,7 @@ public:
 	/// <param name="naturlrange"></param>
 	/// <param name="uprange"></param>
 	/// <param name="downrange"></param>
-	void CreateAriTitlesAndAnswer(int titleNums = 10, long long naturlrange = 10, long long fracrange = 4, long long downrange = 10);
+	void CreateAriTitlesAndAnswer(int titleNums = 10, long long naturlrange = 10, long long fracrange = 5, long long downrange = 10);
 	
 	/// <summary>
 	/// 读取文件的题目
@@ -73,4 +73,4 @@ private:
 
 	std::default_random_engine mDre;
 };
-#endif // !__PRIARICREATOR
+#endif // !__PRIARICREATOR_H

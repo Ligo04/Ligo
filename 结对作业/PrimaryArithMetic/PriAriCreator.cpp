@@ -145,6 +145,10 @@ void PriAriCreator::CreateAriTitlesAndAnswer(int titleNums, long long naturlrang
 
 bool PriAriCreator::ReadTitilesAndAnswer(std::string titlefilename, std::string answerfilename)
 {
+	//ÏÈÇå¿Õ
+	mInfixs.clear();
+	mAnswers.clear();
+
 	std::ifstream is;
 	is.open(titlefilename,std::ios::in);
 	if (!is.is_open())
@@ -345,7 +349,7 @@ std::string PriAriCreator::CreateAnswer(std::string infix)
 
 void PriAriCreator::SaveTitleToFile()
 {
-	mTitleFile.open("Exercises.txt", std::ios::out | std::ios::app);
+	mTitleFile.open("Exercises.txt", std::ios::out);
 	//mTitleFile << "####################################" << std::endl;
 	for (size_t i = 0; i < mInfixs.size(); i++)
 	{
@@ -359,7 +363,7 @@ void PriAriCreator::SaveTitleToFile()
 
 void PriAriCreator::SaveAnswerToFile()
 {
-	mAnswerFile.open("Answers.txt", std::ios::out | std::ios::app);
+	mAnswerFile.open("Answers.txt", std::ios::out);
 	//mAnswerFile << "####################################" << std::endl;
 	for (size_t i = 0; i < mAnswers.size(); i++)
 	{
