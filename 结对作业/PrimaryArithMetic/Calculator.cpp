@@ -270,7 +270,7 @@ std::stack<std::string> Calculator::GetReversePolish(std::string infix)
 	return std::stack<std::string>();
 }
 
-std::vector<std::vector<std::string>> Calculator::GerChildExpression(std::stack<std::string> reversePolish)
+std::vector<std::vector<std::string>> Calculator::GetChildExpression(std::stack<std::string> reversePolish)
 {
 	std::vector<std::vector<std::string>> childEx;
 	std::stack<std::string> stack;

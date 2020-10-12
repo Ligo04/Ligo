@@ -43,8 +43,12 @@ public:
 	/// <returns>栈</returns>
 	std::stack<std::string>  GetReversePolish(std::string infix);
 
-
-	std::vector<std::vector<std::string>> GerChildExpression(std::stack<std::string> reversePolish);
+	/// <summary>
+	/// 根据后缀表达式得到一个子表达式的二维数组
+	/// </summary>
+	/// <param name="reversePolish"></param>
+	/// <returns>子表达式的二维数组</returns>
+	std::vector<std::vector<std::string>> GetChildExpression(std::stack<std::string> reversePolish);
 
 
 	std::string CalResult(std::string num1, std::string num2, std::string op);

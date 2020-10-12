@@ -20,7 +20,7 @@ public:
 
 	//化简
 	void Simplify();
-
+	//最大公因数
 	long long MaxDiviSor( long long a,  long long b);
 	//转换为字符串
 	std::string to_string() const;

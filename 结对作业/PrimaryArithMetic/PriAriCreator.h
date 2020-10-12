@@ -44,7 +44,7 @@ public:
 
 	bool IsDownZero(std::string expression);
 	/// <summary>
-	/// 判断两个表达式是否等价
+	/// 判断两个子表达式是否等价
 	/// </summary>
 	/// <param name="exp"></param>
 	/// <param name="exp2"></param>

@@ -125,7 +125,7 @@ void PriAriCreator::CreateAriTitlesAndAnswer(int titleNums, long long naturlrang
 		bool flag = false;
 		for (size_t i = 0; i < mAnswers.size(); ++i)
 		{
-			if (mAnswers[i] == answer && IsSimilary(infix, mInfixs[i]))
+			if (mAnswers[i]._Equal(answer) && IsSimilary(infix, mInfixs[i]))
 			{
 				flag = true;
 				break;
@@ -193,7 +193,7 @@ bool PriAriCreator::ReadTitilesAndAnswer(std::string titlefilename, std::string 
 void PriAriCreator::VerificationAnswer()
 {
 	std::ofstream os;
-	os.open("Grade.txt", std::ios::out | std::ios::app);
+	os.open("Grade.txt", std::ios::out);
 	std::vector<std::string> currIndex;
 	std::vector<std::string> errIndex;
 	for (size_t i = 0; i < mInfixs.size(); ++i)
@@ -251,8 +251,8 @@ bool PriAriCreator::IsSimilary(std::string scource, std::string destination)
 	std::stack<std::string> RP2 = mCalculator.GetReversePolish(destination);
 
 	//得到子表达式
-	std::vector<std::vector<std::string>> ex1 = mCalculator.GerChildExpression(RP1);
-	std::vector<std::vector<std::string>> ex2 = mCalculator.GerChildExpression(RP2);
+	std::vector<std::vector<std::string>> ex1 = mCalculator.GetChildExpression(RP1);
+	std::vector<std::vector<std::string>> ex2 = mCalculator.GetChildExpression(RP2);
 
 	for (auto& p : ex1)
 	{
@@ -273,7 +273,7 @@ bool PriAriCreator::IsCreaateNegative(std::string expression)
 	std::stack<std::string> pr = mCalculator.GetReversePolish(expression);
 
 	//得到子表达式
- 	std::vector<std::vector<std::string>> ex = mCalculator.GerChildExpression(pr);
+ 	std::vector<std::vector<std::string>> ex = mCalculator.GetChildExpression(pr);
 
 	for (auto& p:ex)
 	{
@@ -292,7 +292,7 @@ bool PriAriCreator::IsDownZero(std::string expression)
 	std::stack<std::string> pr = mCalculator.GetReversePolish(expression);
 
 	//得到子表达式
-	std::vector<std::vector<std::string>> ex = mCalculator.GerChildExpression(pr);
+	std::vector<std::vector<std::string>> ex = mCalculator.GetChildExpression(pr);
 
 	for (auto& p : ex)
 	{

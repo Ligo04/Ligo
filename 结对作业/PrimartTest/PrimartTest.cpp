@@ -47,7 +47,7 @@ namespace PrimartTest
 		TEST_METHOD(TestMethod4)
 		{
 			PriAriCreator* Par = new PriAriCreator();
-			Par->CreateAriTitlesAndAnswer(10000, 100);
+			Par->CreateAriTitlesAndAnswer(1000, 1000);
 			Assert::IsTrue(Par->ReadTitilesAndAnswer("Exercises.txt", "Answers.txt"));
 			if (Par->ReadTitilesAndAnswer("Exercises.txt", "Answers.txt"))
 			{
